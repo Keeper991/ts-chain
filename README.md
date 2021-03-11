@@ -74,6 +74,8 @@ class Human {
   public getAge() {
     return this.age;
   }
+
+  static sayBye = (): void => console.log("Bye~");  // static 사용 가능.
 }
 
 const sayHi = (person: Human): string => {
@@ -81,6 +83,7 @@ const sayHi = (person: Human): string => {
 }
 
 console.log(sayHi(new Human("You", 29, "female")));
+Human.sayBye(); // Bye~
 ```
 
 - 배열 선언 시, element 타입 제한
