@@ -36,6 +36,7 @@ const func = (param1:string, param2:number, param3:boolean): void => {
 - 인터페이스(c의 struct와 유사)
 
 ```javascript
+// js에는 보이지 않음.
 interface Human {
   name: string;
   age: number;
@@ -52,4 +53,30 @@ const sayHi = (person: Human): string => {
   const { name, age, gender } = person;
   return `Hello ${name}, your age is ${age}, and ${gender}`;
 };
+```
+
+- Class (interface와는 다르게 js파일에 남음)
+
+```javascript
+class Human {
+  public name: string;
+  private age: number;  // private 선언된 변수에 직접 접근 시, error
+  public gender: string;
+
+  constructor(name: string, age: number, gender: string) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  public getAge() {
+    return this.age;
+  }
+}
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, your age is ${person.getAge()}, and ${person.gender}`;
+}
+
+console.log(sayHi(new Human("You", 29, "female")));
 ```
