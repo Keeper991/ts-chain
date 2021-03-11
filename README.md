@@ -32,3 +32,24 @@ const func = (param1:string, param2:number, param3:boolean): void => {
   ...
 }
 ```
+
+- 인터페이스(c의 struct와 유사)
+
+```javascript
+interface Human {
+  name: string;
+  age: number;
+  gender: string;
+}
+
+const sayHi = (person: Human): string => {
+  return `Hello ${person.name}, your age is ${person.age}, and ${person.gender}`;
+};
+
+// 구조분해해서 받아올 수도 있음.
+// 받아온 변수들의 타입도 자동으로 지정됨.
+const sayHi = (person: Human): string => {
+  const { name, age, gender } = person;
+  return `Hello ${name}, your age is ${age}, and ${gender}`;
+};
+```
