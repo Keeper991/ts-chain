@@ -104,3 +104,20 @@ arr.push({ tall: 162 }); // Error { tall: number } 은 허용되지 않는 타�
 arr.push({ age: "4" }); // Error  { age: string } 은 허용되지 않는 타입.
 arr.push({ age: 5 }); // Not Error
 ```
+
+- [number] vs number[]
+
+```javascript
+// [number]
+const arr: [number] = []; // Error => 초기화 시, 1개의 number가 있어야함.
+
+const arr: [number] = [1, 2]; // Error => 초기화 시, 1개의 number가 있어야함. 2개라서 에러.
+
+const arr: [number, number] = [1]; // Error
+
+const arr: [number] = [1];
+arr.push(2); // Not Error => 최초 할당할 때만 지키면 됨.
+
+// number[]
+const arr: number[] = []; // Not Error => 들어올 인자에 대한 타입만 지정.
+```
