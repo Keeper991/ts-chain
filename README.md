@@ -24,3 +24,11 @@ const sayHi = (name, age, gender?) => {
 
 sayHi(name, age); // Not Error
 ```
+
+- 인자 타입 및 Return 타입 설정
+
+```javascript
+const func = (param1:string, param2:number, param3:boolean): void => {
+  ...
+}
+```
