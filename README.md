@@ -82,3 +82,25 @@ const sayHi = (person: Human): string => {
 
 console.log(sayHi(new Human("You", 29, "female")));
 ```
+
+- 배열 선언 시, element 타입 제한
+
+```javascript
+const numArr: [number] = [1, 2, 3];
+numArr.push("string"); // error
+
+const numArr = [1, 2, 3];
+numArr.push("string"); // error
+
+const numArr: any = [1, 2, 3];
+numArr.push("string"); // Not Error
+
+const arr = [1, "2"]; // arr: string | number
+arr.push("a"); // Not Error
+arr.push({ age: 12 }); // Error
+
+const arr = [1, "2", { age: 3 }]; // arr: string | number | { age: number }
+arr.push({ tall: 162 }); // Error { tall: number } 은 허용되지 않는 타입.
+arr.push({ age: "4" }); // Error  { age: string } 은 허용되지 않는 타입.
+arr.push({ age: 5 }); // Not Error
+```
