@@ -6,6 +6,8 @@ Let's make Block-Chain!!
 
 ## TypeScript 특징들
 
+- 기본적으로 각 파일들이 모듈임을 가정하기 때문에, `export`를 해줘야함..
+
 - 함수의 인자 개수 일치 및 선택 인자 표시
 
 ```javascript
